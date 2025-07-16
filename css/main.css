@@ -285,5 +285,34 @@ body {
 /* sec3 */
 
 #sec3 .inner .about {
-    padding-top: 100px;
+    padding-top: 150px;
+}
+
+#sec3 .drum {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+#sec3 .drum .drum_left,
+#sec3 .drum .drum_right {
+    flex: 1;
+    max-width: 50%;
+}
+
+#sec3 .drum .drum_left {
+    max-width: 1000px;
+    height: 900px;
+}
+
+#sec3 .drum .drum_left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#sec3 .drum .drum_right dt {
+    font-size: 4rem;
+    font-weight: 600;
+    padding-bottom: 10px;
 }
