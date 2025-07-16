@@ -1,38 +1,76 @@
-document.addEventListener("DOMContentLoaded", () => {
+$(function () {
+    scrollAnimations();
+});
+
+{
     gsap.registerPlugin(ScrollTrigger);
 
-    // 섹션 고정 스크롤 (스냅)
-    let sections = gsap.utils.toArray(".snap-section");
-    sections.forEach(section => {
-        ScrollTrigger.create({
-            trigger: section,
+    gsap.to("#header .nav", {
+        y: -100,
+        opacity: 0,
+        ease: "power1.out",
+        scrollTrigger: {
+            trigger: "#sec1",
             start: "top top",
-            pin: true,
-            pinSpacing: false
-        });
+            end: "top+=200 top",
+            scrub: 0.2
+        }
     });
+
+    gsap.to("#header .rghbar", {
+        x: 100,
+        opacity: 0,
+        ease: "power1.out",
+        scrollTrigger: {
+            trigger: "#sec1",
+            start: "top top",
+            end: "top+=200 top",
+            scrub: 0.3
+        }
+    });
+
+    gsap.to("#sec1 .inner", {
+        opacity: 0,
+        y: -100,
+        ease: "power1.out",
+        scrollTrigger: {
+            trigger: "#sec1",
+            start: "top top",
+            end: "center top",
+            scrub: 0.3
+        }
+    });
+
+    gsap.to("#sec2 .overlay", {
+        opacity: 0.1,
+        ease: "none",
+        scrollTrigger: {
+            trigger: "#sec2",
+            start: "top bottom",
+            end: "top top",
+            scrub: true
+        }
+    });
+
+    // gsap.from("#sec2 .sec2_text", {
+    //     opacity: 1,
+    //     y: 100,
+    //     scrollTrigger: {
+    //         trigger: "#sec2",
+    //         start: "top bottom",
+    //         end: "bottom top",
+    //         scrub: true
+    //     }
+    // });
 
     ScrollTrigger.create({
-
-        snap: {
-            snapTo: 1 / (sections.length - 1),
-            duration: { min: 0.5, max: 1 },
-            ease: "power3.inOut"
-        }
+        trigger: "#sec3",
+        start: "top 50%",
+        onEnter: () => {
+            gsap.to("#sec1 .sec1_img", { opacity: 0, y: -50, duration: 1, ease: "power2.out" });
+        },
+        onLeaveBack: () => {
+            gsap.to("#sec1 .sec1_img", { opacity: 1, y: 0, duration: 1, ease: "power2.out" });
+        },
     });
-
-    // sec2 스크롤 효과
-    gsap.fromTo("#sec2 .sec2_text > dl > *",
-        { opacity: 0, y: 30 },
-        {
-            opacity: 1, y: 0,
-            stagger: 0.2,
-            ease: "power8.out",
-            scrollTrigger: {
-                trigger: "#sec2",
-                start: "top 10%",
-                toggleActions: "play reverse play reverse"
-            }
-        }
-    );
-});
+}
