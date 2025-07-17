@@ -41,31 +41,22 @@ $(function () {
         }
     });
 
-    gsap.to("#sec2 .overlay", {
-        opacity: 0.1,
-        ease: "none",
-        scrollTrigger: {
-            trigger: "#sec2",
-            start: "top bottom",
-            end: "top top",
-            scrub: true
-        }
-    });
 
-    // gsap.from("#sec2 .sec2_text", {
-    //     opacity: 1,
-    //     y: 100,
+    //**************오버레이 나중에 문제 해결 하기***************** */
+    // gsap.to("#sec2 .overlay", {
+    //     opacity: 0.1,
+    //     ease: "none",
     //     scrollTrigger: {
     //         trigger: "#sec2",
     //         start: "top bottom",
-    //         end: "bottom top",
+    //         end: "top top",
     //         scrub: true
     //     }
     // });
 
     ScrollTrigger.create({
         trigger: "#sec3",
-        start: "top 50%",
+        start: "top 80%",
         onEnter: () => {
             gsap.to("#sec1 .sec1_img", { opacity: 0, y: -50, duration: 1, ease: "power2.out" });
         },
