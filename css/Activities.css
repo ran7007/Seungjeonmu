@@ -12,6 +12,7 @@ body {
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     background: #F3F3F3;
+    font-size: 1.5rem;
 }
 
 .inner {
@@ -87,7 +88,7 @@ body {
     border-radius: 10px;
     text-align: start;
     width: 100px;
-    top: 3vh;
+    top: 4vh;
     margin-left: -10px;
     opacity: 0;
     transition: all 0.5s ease;
@@ -111,4 +112,166 @@ body {
 #header .depth2 li:hover a {
     color: var(--point-color);
     border-bottom: var(--point-color) solid 1px;
+}
+
+/* sec1 */
+
+#sec .sec1_img {
+    position: relative;
+}
+
+#sec1 img {
+    filter: brightness(0.2);
+}
+
+#sec1 .sec1_text {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+    color: var(--black_background_font-color);
+}
+
+#sec1 .sec1_text h1 {
+    font-size: 5rem;
+    line-height: 1;
+}
+
+#sec1 .sec1_text>p {
+    font-size: 4rem;
+}
+
+#sec1 .sec1_text .sec1_list {
+    padding-top: 30px;
+    display: flex;
+    gap: 30px;
+}
+
+#sec1 .sec1_text .sec1_list p {
+    border: 1px solid #fff;
+    border-radius: 20px;
+    padding: 8px 25px;
+    transition: all 0.5s ease;
+}
+
+#sec1 .sec1_text .sec1_list p:hover {
+    background: #fff;
+    color: var(--point-color);
+}
+
+#sec2 {
+    width: 1920px;
+}
+
+#sec2 .tabnav {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    padding: 50px;
+    font-size: 2.3rem;
+    font-weight: 500;
+    background: #fff;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+}
+
+#sec2 .tabnav.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+#sec2 .tabnav li.active a {
+    color: var(--point-color);
+}
+
+#sec3 {
+    position: relative;
+    height: 100vh;
+    padding-top: 5vh;
+
+}
+
+#sec3 .inner .year_cont {
+    padding-top: 150px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 80px;
+}
+
+#sec3 .inner .year_cont .tab_img1 {
+    width: 600px;
+    transition: all 0.3s ease;
+    position: relative;
+    opacity: 0;
+}
+
+#sec3 .inner .year_cont .tab_img1.fixed {
+    position: fixed;
+    top: 20%;
+    left: 98px;
+    opacity: 1;
+}
+
+#sec3 .inner .year_cont img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+#sec3 .inner .year .year_cont>ul {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+}
+
+#sec3 .inner .year .year_cont ul li:not(:first-child) {
+    padding-top: 60px;
+}
+
+#sec3 .inner .year .year_cont ul li dl {
+    display: flex;
+    gap: 30px;
+}
+
+#sec3 .inner .year .year_cont ul li dl dt {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--point-color);
+}
+
+#sec3 .inner .year .year_cont ul li dl dd ul li:not(:first-child) {
+    padding-top: 10px;
+}
+
+.tabcontent>.inner>.year>div {
+    display: none;
+}
+
+.tabcontent>.inner>.year>div.active {
+    display: block;
+}
+
+.tabnav a.active {
+    color: var(--point-color);
+    font-weight: 600;
+}
+
+
+#footer {
+    background: #000;
+    color: var(--black_background_font-color);
+    margin-top: 100vh;
+    position: relative;
+    z-index: 3;
+}
+
+#footer .inner {
+    padding: 50px 0;
+    text-align: center;
+
 }
