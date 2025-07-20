@@ -9,7 +9,7 @@
     <!-- css -->
     <link rel="stylesheet" href="../../css/Activities.css">
 
-    <script defer src="../about/Activities.js"></script>
+    <script defer src="../../js/Activities.js"></script>
 </head>
 
 <body>
@@ -19,13 +19,13 @@
                 <div class="hedaer_meun">
                     <nav class="nav">
                         <ul class="gnb">
-                            <li><a href="/index.html">홈</a></li>
+                            <li><a href="../../index.html">홈</a></li>
                             <li><a href="#">협회소개</a>
                                 <ul class="depth2">
-                                    <li><a href="/sub/about/about.html">인사말씀</a></li>
-                                    <li><a href="/sub/about/Activities.html">주요활동</a></li>
-                                    <li><a href="/sub/about/history.html">연혁</a></li>
-                                    <li><a href="/sub/about/map.html">오시는 길</a></li>
+                                    <li><a href="about.html">인사말씀</a></li>
+                                    <li><a href="Activities.html">주요활동</a></li>
+                                    <li><a href="history.html">연혁</a></li>
+                                    <li><a href="map.html">오시는 길</a></li>
                                 </ul>
                             </li>
                             <li><a href="#">협회소식</a>
@@ -67,31 +67,42 @@
             </div><!-- sec1_text -->
         </section><!-- sec1 -->
 
-        <!-- <section id="sec2" class="scrool_wrap">
-            <ul class="lnb_list">
-                <li class="active"><a href="#year_2019">현재 ~ 2016</a></li>
-                <li class=><a href="#year_2015">2015 ~ 2011</a></li>
-                <li class=><a href="#year_2006">2010 ~ 2006</a></li>
-                <li class=><a href="#year_2001">2005 ~ 2001</a></li>
-                <li class=><a href="#year_1966">2000 ~ 1966</a></li>
-            </ul> lnb_list
-        </section> -->
+        <div class="tab-container">
+            <div class="tabs on" onclick="openTab('Tab1')">Tab 1</div>
+            <div class="tabs" onclick="openTab('Tab2')">Tab 2</div>
+            <div class="tabs" onclick="openTab('Tab3')">Tab 3</div>
+        </div>
+
+        <div class="tab_wrap">
+            <div id="Tab1" class="tab on">
+                <h2>Tab 1 Content</h2>
+                <p>This is Tab 1 content.</p>
+            </div>
+            <div id="Tab2" class="tab">
+                <h2>Tab 2 Content</h2>
+                <p>This is Tab 2 content.</p>
+            </div>
+            <div id="Tab3" class="tab">
+                <h2>Tab 3 Content</h2>
+                <p>This is Tab 3 content.</p>
+            </div>
+        </div>
 
         <section id="sec2" class="tab">
-            <ul class="tabnav">
-                <li><a href="#tab01" class="active">현재 ~ 2016</a></li>
-                <li><a href="#tab02">2015 ~ 2011</a></li>
-                <li><a href="#tab03">2010 ~ 2006</a></li>
-                <li><a href="#tab04"></a>2005 ~ 2001</li>
-                <li><a href="#tab05"></a>2000 ~ 1966</li>
+            <ul class="tabnav tab-container">
+                <li class="tabs on" onclick="openTab('tab1')">현재 ~ 2016</li>
+                <li class="tabs" onclick="openTab('tab2')">2015 ~ 2011</li>
+                <li class="tabs" onclick="openTab('tab3')">2010 ~ 2006</li>
+                <li class="tabs" onclick="openTab('tab4')">2005 ~ 2001</li>
+                <li class="tabs" onclick="openTab('tab5')">2000 ~ 1966</li>
             </ul>
         </section><!-- sec2 -->
 
-        <section id="sec3" class="tabcontent sec3">
+        <section id="sec3" class="tab_wrap sec3">
             <div class="inner">
                 <div class="year">
-                    <div id="tab01" class="year_cont active">
-                        <img src="/img/sub/sub1_act/Mask group.png" alt="승전무" class="tab_img1">
+                    <div id="tab1" class="tab on">
+                        <img src="../../img/sub/sub1_act/Mask group.png" alt="승전무" class="tab_img1">
                         <ul>
                             <li>
                                 <dl>
@@ -181,13 +192,13 @@
                         </ul>
                     </div><!-- year_2016 -->
 
-                    <div id="tab02" class="year_2016">
+                    <div id="tab2" class="tab">
                         <ul>
                             <li>ooo</li>
                         </ul>
                     </div><!-- year_2016 -->
 
-                    <div id="tab03" class="year_2016">
+                    <div id="tab3" class="tab">
                         <ul>
                             <li>dd</li>
                         </ul>
