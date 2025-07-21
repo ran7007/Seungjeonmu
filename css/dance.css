@@ -12,7 +12,6 @@ body {
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     background: #F3F3F3;
-    font-size: 1.5rem;
 }
 
 .inner {
@@ -78,7 +77,6 @@ body {
     border-bottom: var(--point-color) solid 1px;
 }
 
-
 /* 서브 탭 */
 #header .inner .gnb li>.depth2 {
     position: absolute;
@@ -114,64 +112,107 @@ body {
     border-bottom: var(--point-color) solid 1px;
 }
 
-#sec1 .inner>p {
-    padding-top: 100px;
-    color: var(--point-color);
-    font-weight: 600;
-    font-size: 1.8rem;
-    padding-bottom: 10px;
+#sec1 {
+    height: 100px;
+    width: 1920px;
 }
 
-#sec1 .inner .sec1_con {
+#sec1 .tab-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 100px;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px 0;
+    font-size: 18px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
 }
 
-#sec1 .inner .text {
-    position: relative;
-    padding-left: 22px;
+#sec1 .tab-container.fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #F3F3F3;
 }
 
-#sec1 .inner .text div {
+#sec1 .tabs {
+    padding: 10px 20px;
+    font-weight: 700;
+    cursor: pointer;
+    border-bottom: 1px solid #F3F3F3;
+    transition: all .3s;
+}
+
+#sec1 .tabs:hover {
+    border-bottom: 1px solid var(--point-color);
+}
+
+#sec1 .tabs.on {
+    color: var(--point-color);
+}
+
+#sec2 {
     padding-top: 100px;
 }
 
-#sec1 .inner .text p:nth-of-type(2) {
-    padding: 30px 10px 0 0;
+#sec2 .tab {
+    display: none
 }
 
-#sec1 .inner .text p:nth-of-type(1)::after {
-    content: "";
-    background: url(../img/sub/sub1_map/icon1.png) no-repeat center center / cover;
-    position: absolute;
-    width: 22px;
-    height: 22px;
-    left: -2px;
-    top: 0px;
+#sec2 .tab.on {
+    display: block
 }
 
-#sec1 .inner .text p:nth-of-type(2)::after {
-    content: "";
-    background: url(../img/sub/sub1_map/icon2.png) no-repeat center center / cover;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    left: -1px;
-    bottom: 0;
+#sec2 .inner .tab .tab_con {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#sec1 .map {
-    max-width: 1200px;
+#sec2 .inner .tab .tab_con div {
+    width: calc((100% - 100px) / 2);
+}
+
+.swiper {
     width: 100%;
-    margin: 0 auto;
+    height: 100%;
 }
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+#sec2 .inner .tab .tab_con .Dance dl:nth-child(1) {
+    padding-bottom: 80px;
+}
+
+#sec2 .inner .tab .tab_con .Dance dl dt {
+    font-size: 3rem;
+    font-weight: 600;
+    padding-bottom: 5px;
+    color: var(--point-color);
+}
+
+#sec2 .inner .tab .tab_con .Dance dl dd {
+    line-height: 1.8;
+}
+
 
 #footer {
     background: #000;
     color: var(--black_background_font-color);
-    margin-top: 14vh;
+    margin-top: 15vh;
     position: relative;
     z-index: 3;
 }
@@ -179,5 +220,4 @@ body {
 #footer .inner {
     padding: 50px 0;
     text-align: center;
-
 }

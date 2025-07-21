@@ -1,5 +1,5 @@
 window.addEventListener('scroll', () => {
-    const sec2 = document.querySelector('#sec2');
+    const sec2 = document.querySelector('#sec1');
     const lnb = sec2.querySelector('.tab-container');
 
     if (window.scrollY >= sec2.offsetTop) {
@@ -19,3 +19,13 @@ function openTab(tabName) {
     document.querySelector('.tabs[onclick="openTab(\'' + tabName + '\')"]').classList.add('on');
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        }
+    });
+});

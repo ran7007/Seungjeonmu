@@ -12,7 +12,6 @@ body {
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     background: #F3F3F3;
-    font-size: 1.5rem;
 }
 
 .inner {
@@ -78,7 +77,6 @@ body {
     border-bottom: var(--point-color) solid 1px;
 }
 
-
 /* 서브 탭 */
 #header .inner .gnb li>.depth2 {
     position: absolute;
@@ -114,66 +112,51 @@ body {
     border-bottom: var(--point-color) solid 1px;
 }
 
-#sec1 .inner>p {
+#sec1 {
     padding-top: 100px;
-    color: var(--point-color);
-    font-weight: 600;
-    font-size: 1.8rem;
-    padding-bottom: 10px;
+    height: auto;
+    color: var(--black_background_font-color);
+    padding-bottom: 70px;
 }
 
-#sec1 .inner .sec1_con {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 100px;
-}
-
-#sec1 .inner .text {
-    position: relative;
-    padding-left: 22px;
-}
-
-#sec1 .inner .text div {
-    padding-top: 100px;
-}
-
-#sec1 .inner .text p:nth-of-type(2) {
-    padding: 30px 10px 0 0;
-}
-
-#sec1 .inner .text p:nth-of-type(1)::after {
+#sec1::before {
     content: "";
-    background: url(../img/sub/sub1_map/icon1.png) no-repeat center center / cover;
     position: absolute;
-    width: 22px;
-    height: 22px;
-    left: -2px;
-    top: 0px;
-}
-
-#sec1 .inner .text p:nth-of-type(2)::after {
-    content: "";
-    background: url(../img/sub/sub1_map/icon2.png) no-repeat center center / cover;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    left: -1px;
+    top: 0;
+    left: 0;
+    right: 0;
     bottom: 0;
+    background: url(../img/sub/sub1_histrory/6.\ 북춤\ 23.jpg) no-repeat center center / cover;
+    filter: brightness(0.2);
+    z-index: -1;
 }
 
-#sec1 .map {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
+#sec1 .inner .histroy_box {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    align-items: center;
+}
+
+#sec1 .inner .histroy_box .histroy_logo {
+    width: 35%;
+}
+
+#sec1 .inner .histroy_box .histroy_logo p {
+    font-size: 5rem;
+}
+
+#sec1 .inner .histroy_box .histroy_year dl dt {
+    font-size: 1.8rem;
+}
+
+#sec1 .inner .histroy_box .histroy_year dl dd {
+    padding-bottom: 30px;
 }
 
 #footer {
     background: #000;
     color: var(--black_background_font-color);
-    margin-top: 14vh;
-    position: relative;
-    z-index: 3;
 }
 
 #footer .inner {
