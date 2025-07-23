@@ -165,7 +165,7 @@
 @media (max-width: 870px) {
 
     #sec1 .sec1_text .sec1_list p {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     #sec2 .tab-container {
@@ -226,13 +226,20 @@
     }
 
     #sec3 .inner .tab .tab_con .tab_img_wrap {
-        max-width: 400px;
+        max-width: 350px;
         top: 0;
     }
 
 }
 
 @media (max-width: 769px) {
+    #sec1 .sec1_text h1 {
+        font-size: 3rem;
+    }
+
+    #sec1 .sec1_text p {
+        font-size: 3rem;
+    }
 
     #sec3 .inner .tab .tab_con {
         display: block;
@@ -253,5 +260,18 @@
 
     #sec3 .inner .tab .tab_con .year dl dt::before {
         bottom: 4.5vh;
+    }
+}
+
+@media (max-width: 600px) {
+
+    #sec1 .sec1_text h1,
+    #sec1 .sec1_text p {
+        font-size: 2.5rem;
+    }
+
+
+    #sec1 .sec1_text .sec1_list {
+        display: none;
     }
 }
