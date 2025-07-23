@@ -332,16 +332,25 @@ body {
     text-align: end;
     font-size: 2rem;
     z-index: 1;
-    top: 20%;
+    top: 10vh;
 }
 
-#sec3 .inner .drum .sec_text2,
+#sec3 .inner .drum .sec_text2 {
+    position: absolute;
+    display: flex;
+    align-items: end;
+    z-index: 1;
+    bottom: 12vh;
+    max-width: 1720px;
+    width: 100%;
+}
+
 #sec4 .inner .sowd .sec_text2 {
     position: absolute;
     display: flex;
     align-items: end;
     z-index: 1;
-    bottom: 30%;
+    bottom: 30vh;
     max-width: 1720px;
     width: 100%;
 }

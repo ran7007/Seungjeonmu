@@ -233,7 +233,25 @@
 }
 
 @media (max-width: 769px) {
+
+    #sec3 .inner .tab .tab_con {
+        display: block;
+    }
+
     #sec3 .inner .tab .tab_con .tab_img_wrap {
         position: relative;
+        max-width: 760px;
+    }
+
+    #sec3 .inner .tab .tab_con .tab_img_wrap img {
+        padding-top: 0;
+    }
+
+    #sec3 .inner .tab .tab_con .year dl:nth-of-type(1) dt {
+        padding-top: 30px;
+    }
+
+    #sec3 .inner .tab .tab_con .year dl dt::before {
+        bottom: 4.5vh;
     }
 }
