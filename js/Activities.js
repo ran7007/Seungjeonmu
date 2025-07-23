@@ -11,11 +11,46 @@ window.addEventListener('scroll', () => {
     }
 });
 
+
 function openTab(tabName) {
-    document.querySelectorAll('.tab, .tabs').forEach(function (el) {
-        el.classList.remove('on');
-    });
+    const container = document.querySelector('.tab-container');
+    const currentOnTab = container.querySelector('.tabs.on');
+    const clickedTab = document.querySelector(`.tabs[onclick="openTab('${tabName}')"]`);
+
+    document.querySelectorAll('.tab, .tabs').forEach(el => el.classList.remove('on'));
+
     document.getElementById(tabName).classList.add('on');
-    document.querySelector('.tabs[onclick="openTab(\'' + tabName + '\')"]').classList.add('on');
+    clickedTab.classList.add('on');
+
+    if (window.innerWidth <= 870) {
+        if (currentOnTab === clickedTab) {
+            container.classList.toggle('show-dropdown');
+        } else {
+            container.classList.remove('show-dropdown');
+        }
+    }
 }
+
+
+
+const controller = new ScrollMagic.Controller();
+const sections = document.querySelectorAll("#sec1");
+
+sections.forEach((section) => {
+    TweenLite.set(section, { opacity: 0, y: 100 });
+
+    const sectionTween = TweenMax.to(section, 1, {
+        opacity: 1,
+        y: 0,
+        ease: Power2.easeOut,
+    });
+
+    new ScrollMagic.Scene({
+        triggerElement: section,
+        triggerHook: 0.5,
+        reverse: true,
+    })
+        .setTween(sectionTween)
+        .addTo(controller);
+});
 

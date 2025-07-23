@@ -1,244 +1,3 @@
-:root {
-    --point-color: #02469E;
-    --black_background_font-color: #ffffff;
-    --main_font-color: #111111;
-}
-
-/* 포인트, 메인, 타이틀, 설명글 지정color  */
-body {
-    line-height: 1.5;
-    color: #323232, ;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-    background: #F3F3F3;
-    font-size: 1.5rem;
-}
-
-.inner {
-    max-width: 1720px;
-    margin: 0 auto;
-    padding: 0 20px;
-    font-size: 1.5rem;
-}
-
-#header {
-    background: #fff;
-    width: 100%;
-    height: 100px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-    padding: 0 20px;
-
-}
-
-#header .inner {
-    color: var(--main_font-color);
-    position: relative;
-}
-
-
-#header .inner .hedaer_meun {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-}
-
-#header .inner nav {
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    margin: 40px auto;
-    padding: 0 20px;
-    z-index: 1;
-    width: 100%;
-}
-
-#header .inner nav .logo {
-    font-size: 2rem;
-    font-weight: 700;
-}
-
-#header .inner nav .gnb {
-    position: relative;
-    display: flex;
-    justify-content: flex-start;
-    gap: 40px;
-    font-weight: 500;
-}
-
-#header .inner nav .gnb>li {
-    transition: all 0.5s;
-    border-bottom: 1px solid transparent;
-    /* 볼더 넣을지 말지 고민 */
-}
-
-#header .inner nav .gnb>li:hover {
-    color: var(--point-color);
-    border-bottom: var(--point-color) solid 1px;
-}
-
-
-/* 서브 탭 */
-#header .inner .gnb li>.depth2 {
-    position: absolute;
-    display: block;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: start;
-    width: 100px;
-    top: 4vh;
-    margin-left: -10px;
-    opacity: 0;
-    transition: all 0.5s ease;
-    visibility: hidden;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
-}
-
-#header .inner .gnb>li:hover .depth2 {
-    opacity: 1;
-    visibility: visible;
-}
-
-#header .depth2 li {
-    padding-top: 10px;
-}
-
-#header .depth2 li a {
-    color: #111;
-    border-bottom: 1px solid transparent;
-    transition: all 0.5s ease;
-}
-
-#header .depth2 li:hover a {
-    color: var(--point-color);
-    border-bottom: var(--point-color) solid 1px;
-}
-
-/* ham */
-
-#header .inner nav .ham {
-    z-index: 10;
-    position: relative;
-    width: 30px;
-    height: 30px;
-    background: transparent;
-    font-size: 0;
-    cursor: pointer;
-    display: none;
-    font-size: 1.5rem;
-}
-
-#header .inner nav .ham::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 5px;
-    display: block;
-    width: 90%;
-    height: 2px;
-    background: #02469E;
-    transition: all 0.2s;
-}
-
-#header .inner nav .ham::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 14px;
-    display: block;
-    width: 90%;
-    height: 2px;
-    background: #02469E;
-    transition: all 0.2s;
-}
-
-#header .inner nav .ham span {
-    position: absolute;
-    left: 0;
-    bottom: 6px;
-    display: block;
-    width: 90%;
-    height: 2px;
-    background: #02469E;
-    transition: all 0.2s;
-}
-
-#header .ham.active::after {
-    transform: translate(0, 4.5px) rotate(45deg);
-    background-color: var(--main-color);
-}
-
-#header .ham.active::before {
-    transform: translate(0, -4.5px) rotate(-45deg);
-    background-color: var(--main-color);
-}
-
-#header .ham.active span {
-    opacity: 0;
-}
-
-
-.mgnb {
-    padding: 100px 20px;
-    position: fixed;
-    width: 30%;
-    height: 100%;
-    background: #fff;
-    z-index: 3;
-    left: 0;
-    top: 0;
-    color: var(--main-color);
-    opacity: 1;
-    transform: translateX(-100%);
-    transition: transform 0.8s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
-}
-
-.mgnb.active {
-    transform: translateX(0);
-    opacity: 1;
-    visibility: visible
-}
-
-.mgnb ul {
-    padding: 90px 0;
-    margin: 0;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-}
-
-.mgnb.active ul {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.mgnb li {
-    text-align: center;
-    font-size: 2rem;
-    padding: 20px 0;
-    transition: all 0.5s;
-    margin-right: 50px;
-    cursor: pointer;
-}
-
-.mgnb li dl {
-    text-align: center;
-}
-
-.mgnb li dl dd {
-    font-size: 1.5rem;
-    padding-top: 10px;
-    border-bottom: 1px solid transparent;
-    transition: all 0.5s ease;
-}
-
-
-.mgnb li dl dd:hover {
-    color: var(--point-color);
-}
-
-
 #sec1 {
     position: relative;
     padding-top: 50px;
@@ -365,30 +124,9 @@ body {
     font-weight: 500;
 }
 
-#footer {
-    background: #000;
-    color: var(--black_background_font-color);
-    margin-top: 15vh;
-    position: relative;
-    z-index: 3;
-}
-
-#footer .inner {
-    padding: 50px 0;
-    text-align: center;
-
-}
 
 
 @media(max-width:1024px) {
-    #header .inner nav .gnb {
-        display: none;
-    }
-
-    #header .inner nav .ham {
-        display: block;
-        transform: unset;
-    }
 
     #sec1 .inner {
         right: 5%;
@@ -425,25 +163,26 @@ body {
         top: -152vh;
         font-size: 1.6rem;
     }
+
+    #footer .inner {
+        font-size: 1.2rem;
+        flex-wrap: wrap;
+    }
 }
 
-#footer .inner {
-    font-size: 1.2rem;
-    flex-wrap: wrap;
+@media(max-width:500px) {
+    #sec2 .inner p {
+        top: -152vh;
+        font-size: 1.3rem;
+    }
 }
+
 
 @media(max-width:480px) {
 
-    #header .inner nav .ham {
-        width: 9%;
-    }
-
-    .mgnb {
-        width: 20%;
-    }
 
     #sec1 {
-        padding-top: 120px;
+        padding-top: 130px;
     }
 
     #sec1 .inner .map_box {
@@ -472,10 +211,8 @@ body {
 
 
     #sec2 .inner p {
-        position: relative;
         top: -170vh;
         font-size: 1.3rem;
-        flex-wrap: wrap;
     }
 
     #sec {
