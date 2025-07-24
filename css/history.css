@@ -15,14 +15,15 @@
     position: absolute;
     border-top: 1px solid #02469E;
     width: 100%;
-    left: 12.5vh;
+    left: 20px;
     bottom: -10vh;
 }
 
 #sec2 {
     position: relative;
     height: 350vh;
-    left: 3vh;
+    left: 20%;
+    transform: translateX(-50%);
 }
 
 
