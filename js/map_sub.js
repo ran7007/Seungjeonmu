@@ -1,3 +1,16 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const ham = document.querySelector(".ham");
+    const mgnb = document.querySelector(".mgnb");
+
+    ham.addEventListener("click", () => {
+        ham.classList.toggle("active");
+        mgnb.classList.toggle("active");
+    });
+});
+
+
+
+
 const controller = new ScrollMagic.Controller();
 const sections = document.querySelectorAll("#sec1, #sec2, #sec3, #sec4, #sec5, #sec6");
 

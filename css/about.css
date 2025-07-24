@@ -12,7 +12,7 @@
 
 #sec1 p {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: var(--black_background_font-color);
@@ -28,7 +28,7 @@
 
 #sec2 .inner {
     display: flex;
-    gap: 100px;
+    gap: 80px;
     align-items: center;
     justify-content: center;
 }
@@ -52,7 +52,7 @@
 }
 
 #sec2 .inner .intro_right h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     color: var(--point-color);
     padding-bottom: 30px;
 }
@@ -134,5 +134,11 @@
 @media (max-width:769px) {
     #sec2 .inner .intro_right h1 {
         font-size: 2rem;
+    }
+}
+
+@media (max-width:500px) {
+    #sec2 .inner .intro_right h1 {
+        font-size: 1.5rem;
     }
 }

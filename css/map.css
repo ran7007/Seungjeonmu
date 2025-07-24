@@ -140,9 +140,6 @@
 
 @media(max-width:769px) {
 
-    #sec1 {
-        padding-top: 150px;
-    }
 
     #sec1 .inner {
         position: relative;
@@ -156,12 +153,6 @@
     #sec1 .inner .text_buttom {
         margin-left: 100px;
 
-    }
-
-    #sec2 .inner p {
-        position: relative;
-        top: -152vh;
-        font-size: 1.6rem;
     }
 
     #footer .inner {
