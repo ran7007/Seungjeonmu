@@ -1,120 +1,5 @@
-:root {
-    --point-color: #02469E;
-    --black_background_font-color: #ffffff;
-    --main_font-color: #111111;
-}
-
-/* 포인트, 메인, 타이틀, 설명글 지정color  */
-body {
-    line-height: 1.5;
-    color: #323232, ;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-    background: #F3F3F3;
-}
-
-.inner {
-    max-width: 1720px;
-    margin: 0 auto;
-    padding: 0 20px;
-    font-size: 1.5rem;
-}
-
-#header {
-    background: #fff;
-    width: 100%;
-    height: 100px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-
-}
-
-#header .inner {
-    color: var(--main_font-color);
-    position: relative;
-
-}
-
-
-#header .inner .hedaer_meun {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-}
-
-#header .inner nav {
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    margin: 40px auto;
-    padding: 0 20px;
-    z-index: 1;
-    width: 100%;
-}
-
-#header .inner nav .logo {
-    font-size: 2rem;
-    font-weight: 700;
-}
-
-#header .inner nav .gnb {
-    position: relative;
-    display: flex;
-    justify-content: flex-start;
-    gap: 40px;
-    font-weight: 500;
-}
-
-#header .inner nav .gnb>li {
-    transition: all 0.5s;
-    border-bottom: 1px solid transparent;
-    /* 볼더 넣을지 말지 고민 */
-}
-
-#header .inner nav .gnb>li:hover {
-    color: var(--point-color);
-    border-bottom: var(--point-color) solid 1px;
-}
-
-/* 서브 탭 */
-#header .inner .gnb li>.depth2 {
-    position: absolute;
-    display: block;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: start;
-    width: 100px;
-    top: 4vh;
-    margin-left: -10px;
-    opacity: 0;
-    transition: all 0.5s ease;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
-}
-
-#header .inner .gnb>li:hover .depth2 {
-    opacity: 1;
-}
-
-#header .depth2 li {
-    padding-top: 10px;
-}
-
-#header .depth2 li a {
-    color: #111;
-    border-bottom: 1px solid transparent;
-    transition: all 0.5s ease;
-}
-
-#header .depth2 li:hover a {
-    color: var(--point-color);
-    border-bottom: var(--point-color) solid 1px;
-}
-
 #sec1 {
     padding-top: 100px;
-    position: relative;
     height: 100%;
 }
 
@@ -128,6 +13,11 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    width: 70%;
+}
+
+#sec1 .inner .mb {
+    display: none;
 }
 
 #sec2 {
@@ -184,7 +74,7 @@ body {
 #sec3 {
     margin-top: 150px;
     background: url(../img/sub/sub2_Member/sec3_img.png) no-repeat;
-    height: 100%;
+    height: 900px;
     color: var(--black_background_font-color);
 }
 
@@ -269,12 +159,111 @@ body {
 }
 
 #footer {
-    background: #000;
-    color: var(--black_background_font-color);
+    margin-top: 0px;
 }
 
-#footer .inner {
-    padding: 50px 0;
-    text-align: center;
 
+@media (max-width: 800px) {
+    #sec1 {
+        height: 1450px;
+    }
+
+    #sec1 .inner .ds {
+        display: none;
+    }
+
+    #sec1 .inner .mb {
+        display: block;
+    }
+
+    #sec1 .inner img {
+        width: 70%;
+    }
+
+    #sec2 .mem_box {
+        flex-wrap: wrap;
+        gap: 90px
+    }
+
+    #sec3 {
+        height: 800px;
+    }
+
+    #sec3 .inner .total {
+        padding-top: 100px;
+    }
+
+    #sec3 .inner .total p:nth-child(2) {
+        font-size: 4rem;
+    }
+
+    #sec3 .inner h1 {
+        padding-top: 60px;
+    }
+
+    #sec3 .inner .circle_wrap {
+        font-size: 1.5rem;
+    }
+
+    #sec3 .inner .circle_wrap .circle p:nth-child(2) {
+        font-size: 2rem;
+    }
+
+
+    #sec3 .inner .circle_wrap .circle:nth-child(1)::before,
+    #sec3 .inner .circle_wrap .circle:nth-child(2)::before,
+    #sec3 .inner .circle_wrap .circle:nth-child(3)::before {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 600px) {
+    #sec1 {
+        height: 900px;
+    }
+
+    #sec2 .mem_con .con_text dl dt {
+        font-size: 2rem;
+    }
+
+    #sec2 .mem_con .con_text dl dt::before {
+        height: 20px;
+    }
+
+    #sec2 .mem_con .con_text dl dd {
+        font-size: 1.4rem;
+    }
+
+    #sec3 {
+        margin-top: 100px;
+        height: 1000px;
+    }
+
+    #sec3 .inner .total {
+        padding-top: 50px;
+    }
+
+    #sec3 .inner .circle_wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 100px;
+    }
+
+    #sec3 .inner .circle_wrap .circle {
+        padding-bottom: 120px;
+    }
+
+    #sec3 .inner .circle_wrap::before {
+        height: 100%;
+    }
+
+    #sec3 .inner .circle_wrap .circle:nth-child(1)::before,
+    #sec3 .inner .circle_wrap .circle:nth-child(2)::before,
+    #sec3 .inner .circle_wrap .circle:nth-child(3)::before {
+        width: 180px;
+        height: 180px;
+        top: 20%;
+    }
 }
