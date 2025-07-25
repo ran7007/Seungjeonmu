@@ -1,120 +1,6 @@
-:root {
-    --point-color: #02469E;
-    --black_background_font-color: #ffffff;
-    --main_font-color: #111111;
-}
-
-/* 포인트, 메인, 타이틀, 설명글 지정color  */
-body {
-    line-height: 1.5;
-    color: #323232, ;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-    background: #F3F3F3;
-}
-
-.inner {
-    max-width: 1720px;
-    margin: 0 auto;
-    padding: 0 20px;
-    font-size: 1.5rem;
-}
-
-#header {
-    background: #fff;
-    width: 100%;
-    height: 100px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-
-}
-
-#header .inner {
-    color: var(--main_font-color);
-    position: relative;
-
-}
-
-
-#header .inner .hedaer_meun {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-}
-
-#header .inner nav {
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    margin: 40px auto;
-    padding: 0 20px;
-    z-index: 1;
-    width: 100%;
-}
-
-#header .inner nav .logo {
-    font-size: 2rem;
-    font-weight: 700;
-}
-
-#header .inner nav .gnb {
-    position: relative;
-    display: flex;
-    justify-content: flex-start;
-    gap: 40px;
-    font-weight: 500;
-}
-
-#header .inner nav .gnb>li {
-    transition: all 0.5s;
-    border-bottom: 1px solid transparent;
-    /* 볼더 넣을지 말지 고민 */
-}
-
-#header .inner nav .gnb>li:hover {
-    color: var(--point-color);
-    border-bottom: var(--point-color) solid 1px;
-}
-
-/* 서브 탭 */
-#header .inner .gnb li>.depth2 {
-    position: absolute;
-    display: block;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: start;
-    width: 100px;
-    top: 4vh;
-    margin-left: -10px;
-    opacity: 0;
-    transition: all 0.5s ease;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
-}
-
-#header .inner .gnb>li:hover .depth2 {
-    opacity: 1;
-}
-
-#header .depth2 li {
-    padding-top: 10px;
-}
-
-#header .depth2 li a {
-    color: #111;
-    border-bottom: 1px solid transparent;
-    transition: all 0.5s ease;
-}
-
-#header .depth2 li:hover a {
-    color: var(--point-color);
-    border-bottom: var(--point-color) solid 1px;
-}
-
 #sec1 {
     height: 100px;
-    width: 1920px;
+    max-width: 1920px;
 }
 
 #sec1 .tab-container {
@@ -124,6 +10,7 @@ body {
     padding: 30px 0;
     font-size: 18px;
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+    width: 100%;
 }
 
 #sec1 .tab-container.fixed {
@@ -165,14 +52,12 @@ body {
 #sec2 .inner .tab .tab_con {
     display: flex;
     align-items: center;
-    justify-content: center;
-}
-
-#sec2 .inner .tab .tab_con div {
-    width: calc((100% - 100px) / 2);
+    justify-content: space-around;
+    gap: 50px;
 }
 
 .swiper {
+    max-width: 700px;
     width: 100%;
     height: 100%;
 }
@@ -206,18 +91,39 @@ body {
 
 #sec2 .inner .tab .tab_con .Dance dl dd {
     line-height: 1.8;
+    word-wrap: break-word;
 }
 
+@media (max-width:1210px) {
+    #sec2 .inner .tab .tab_con img {
+        max-width: 500px;
+        width: 100%;
+    }
 
-#footer {
-    background: #000;
-    color: var(--black_background_font-color);
-    margin-top: 15vh;
-    position: relative;
-    z-index: 3;
 }
 
-#footer .inner {
-    padding: 50px 0;
-    text-align: center;
+@media (max-width:800px) {
+
+    #sec2 {
+        padding-top: 50px;
+    }
+
+    #sec2 .inner .tab .tab_con {
+        flex-direction: column
+    }
+
+    #sec2 .inner .tab .tab_con div {
+        width: 100%;
+    }
+
+    #sec2 .inner .tab .tab_con img {
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    #sec2 .inner .tab .tab_con .Dance dl:nth-child(1) {
+        padding-top: 30px;
+    }
+
 }

@@ -65,54 +65,70 @@ $(function () {
     });
 
     ScrollTrigger.create({
+        trigger: "#sec2",
+        start: "top center",
+        onEnter: () => {
+            gsap.to("#sec1 .sec1_video", { opacity: 0, duration: 1 });
+        },
+        onLeaveBack: () => {
+            gsap.to("#sec1 .sec1_video", { opacity: 1, duration: 1 });
+        }
+    });
+
+
+    ScrollTrigger.create({
         trigger: "#sec3",
         start: "bottom 80%",
         onEnter: () => {
-            gsap.to("#sec1 .sec1_img", { opacity: 0, y: -50, duration: 1, ease: "power2.out" });
+            gsap.to(["#sec1 .sec1_video, #sec1 .sec1_img"], { opacity: 0, y: -50, duration: 1, ease: "power2.out" });
         },
         onLeaveBack: () => {
-            gsap.to("#sec1 .sec1_img", { opacity: 1, y: 0, duration: 1, ease: "power2.out" });
+            gsap.to(["#sec1 .sec1_video, #sec1 .sec1_img"], { opacity: 1, y: 0, duration: 1, ease: "power2.out" });
         },
     });
 }
 
 // 패널 리스트 확보 (.sec2 ~ .sec4 모두)
-let panels = gsap.utils.toArray(".sec2, .sec3, .sec4");
+if (window.innerWidth > 1024) {
+    // 애니메이션 + pin 처리
+    let panels = gsap.utils.toArray(".sec2, .sec3, .sec4");
 
-panels.forEach((panel) => {
-    ScrollTrigger.create({
-        trigger: panel,
-        start: "top top",
-        end: "bottom top",
-        pin: true,
-        pinSpacing: true,
+    panels.forEach((panel) => {
+        ScrollTrigger.create({
+            trigger: panel,
+            start: "top top",
+            end: "bottom top",
+            pin: true,
+            pinSpacing: true,
+        });
     });
-});
 
-ScrollTrigger.create({
-    snap: {
-        snapTo: (progress, self) => {
-            const scrollPos = self.scroll();
-            const closest = gsap.utils.snap(snapScrollPositions, scrollPos);
-            return gsap.utils.normalize(0, ScrollTrigger.maxScroll(window), closest);
-        },
-        duration: 1,
-        ease: "power1.inOut"
-    }
-});
-
-gsap.utils.toArray(".sec3_img, .sec4_img").forEach((img) => {
-    gsap.fromTo(img,
-        { scale: 1 },
-        {
-            scale: 1.3,
-            scrollTrigger: {
-                trigger: img,
-                start: "center bottom",
-                end: "bottom top",
-                scrub: true,
-                ease: "none"
+    gsap.utils.toArray(".sec3_img, .sec4_img").forEach((img) => {
+        gsap.fromTo(img,
+            { scale: 1 },
+            {
+                scale: 1.3,
+                scrollTrigger: {
+                    trigger: img,
+                    start: "center bottom",
+                    end: "bottom top",
+                    scrub: true,
+                    ease: "none"
+                }
             }
-        }
-    );
-});
+        );
+    });
+
+    // sec1 → sec3 opacity 전환도 데스크탑에서만
+    ScrollTrigger.create({
+        trigger: "#sec3",
+        start: "bottom 80%",
+        onEnter: () => {
+            gsap.to("#sec1 .sec1_video", { opacity: 0, y: -50, duration: 1, ease: "power2.out" });
+        },
+        onLeaveBack: () => {
+            gsap.to("#sec1 .sec1_video", { opacity: 1, y: 0, duration: 1, ease: "power2.out" });
+        },
+    });
+
+}
