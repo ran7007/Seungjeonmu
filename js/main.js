@@ -8,9 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
-
-//스크롤
+// 스크롤 네비게이션
 $(document).ready(function () {
     $(".gnb li a[href^='#']").click(function (e) {
         e.preventDefault();
@@ -20,14 +18,15 @@ $(document).ready(function () {
     });
 });
 
-
+// gsap 애니메이션 시작
 $(function () {
     scrollAnimations();
 });
 
-{
+function scrollAnimations() {
     gsap.registerPlugin(ScrollTrigger);
 
+    // header nav 애니메이션
     gsap.to("#header .nav", {
         y: -100,
         opacity: 0,
@@ -64,6 +63,7 @@ $(function () {
         }
     });
 
+    // sec1 → sec2 넘어가며 배경 숨기기
     ScrollTrigger.create({
         trigger: "#sec2",
         start: "top center",
@@ -75,24 +75,30 @@ $(function () {
         }
     });
 
-
+    // sec1 → sec3 스크롤 시 이미지 위로 사라짐
     ScrollTrigger.create({
         trigger: "#sec3",
         start: "bottom 80%",
         onEnter: () => {
-            gsap.to(["#sec1 .sec1_video, #sec1 .sec1_img"], { opacity: 0, y: -50, duration: 1, ease: "power2.out" });
+            gsap.to(["#sec1 .sec1_video", "#sec1 .sec1_img"], {
+                opacity: 0,
+                y: -50,
+                duration: 1,
+                ease: "power2.out"
+            });
         },
         onLeaveBack: () => {
-            gsap.to(["#sec1 .sec1_video, #sec1 .sec1_img"], { opacity: 1, y: 0, duration: 1, ease: "power2.out" });
-        },
+            gsap.to(["#sec1 .sec1_video", "#sec1 .sec1_img"], {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: "power2.out"
+            });
+        }
     });
-}
 
-// 패널 리스트 확보 (.sec2 ~ .sec4 모두)
-if (window.innerWidth > 1024) {
-    // 애니메이션 + pin 처리
-    let panels = gsap.utils.toArray(".sec2, .sec3, .sec4");
-
+    // ✅ ✅ ✅ 모든 디바이스에서 작동하도록 변경 (조건문 제거)
+    const panels = gsap.utils.toArray(".sec2, .sec3, .sec4");
     panels.forEach((panel) => {
         ScrollTrigger.create({
             trigger: panel,
@@ -103,6 +109,7 @@ if (window.innerWidth > 1024) {
         });
     });
 
+    // 이미지 확대 효과도 반응형 포함
     gsap.utils.toArray(".sec3_img, .sec4_img").forEach((img) => {
         gsap.fromTo(img,
             { scale: 1 },
@@ -119,7 +126,7 @@ if (window.innerWidth > 1024) {
         );
     });
 
-    // sec1 → sec3 opacity 전환도 데스크탑에서만
+    // sec1 → sec3 페이드 전환도 항상 작동
     ScrollTrigger.create({
         trigger: "#sec3",
         start: "bottom 80%",
@@ -130,5 +137,4 @@ if (window.innerWidth > 1024) {
             gsap.to("#sec1 .sec1_video", { opacity: 1, y: 0, duration: 1, ease: "power2.out" });
         },
     });
-
 }

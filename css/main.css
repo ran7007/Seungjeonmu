@@ -2,6 +2,7 @@
 
 body {
     background-color: #000;
+    overflow-x: hidden;
 }
 
 #sec1 {
@@ -25,6 +26,7 @@ body {
     height: auto;
     filter: brightness(0.4);
     object-fit: cover;
+    object-position: center center;
 }
 
 #sec1 .sec1_img {
@@ -105,8 +107,8 @@ body {
 #sec2 .sec2_text {
     position: absolute;
     top: -60vh;
-    left: 40%;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 1;
     text-align: center;
 }
@@ -204,6 +206,7 @@ body {
     border-radius: 20px;
     right: 0;
     transition: all 0.5s;
+    margin-right: 30px;
 }
 
 #sec3 .inner .button::after,
@@ -292,7 +295,7 @@ body {
     #sec1 img {
         width: 100%;
         height: 100%;
-        object-position: 20% center;
+        /* object-position: 20% center; */
     }
 
 
@@ -302,7 +305,7 @@ body {
 @media (max-width:500px) {
     #sec1 .sec1_img {
         max-width: 600px;
-        min-height: 830px;
+        min-height: 950px;
     }
 
     #sec1 img {
@@ -320,11 +323,7 @@ body {
     }
 
     #header .inner .rghbar .scrl_txt {
-        transform: translateY(40vh)
-    }
-
-    #header .inner .rghbar .scrl_bar .bg {
-        top: 8.5vh
+        display: none;
     }
 
     #sec1 .inner ul li:nth-child(1) {
@@ -335,41 +334,6 @@ body {
         font-size: 1.8rem;
     }
 
-
-    @keyframes scr_anime {
-        0% {
-            height: 0;
-            top: 8.5vh;
-        }
-
-        55% {
-            height: 0;
-            top: 8.5vh;
-            animation-timing-function: ease-in;
-        }
-
-        75% {
-            height: 100%;
-            top: 8.5vh;
-        }
-
-        80% {
-            height: 100%;
-            top: 8.5vh;
-        }
-
-        100% {
-            height: 0;
-            ;
-            top: 16.5vh;
-            animation-timing-function: ease-out;
-        }
-    }
-
-    #sec2 .sec2_text {
-        left: 50%;
-        transform: translateX(-50%);
-    }
 
     #sec2 .sec2_text h1 {
         font-size: 3rem;
@@ -403,13 +367,7 @@ body {
 
     #sec3 .inner .drum .sec_text,
     #sec4 .inner .sowd .sec_text {
-        top: 20vh
-    }
-
-    #sec3 .inner .drum .sec_text2 {
-        bottom: 23vh;
-        flex-direction: column;
-        align-items: flex-start;
+        top: 10vh
     }
 
     #sec3 .inner .drum .sec_text2 h2,
@@ -428,5 +386,38 @@ body {
         right: auto;
         bottom: -8vh;
         ;
+    }
+}
+
+@media (max-width:480px) {
+    #sec1 .inner .button {
+        top: 86vh
+    }
+
+    #sec1 .inner ul li:nth-child(1) {
+        font-size: 1.8rem;
+    }
+
+    #sec1 .inner ul li:nth-child(2) {
+        font-size: 1.5rem;
+    }
+
+    #sec1 img {
+        object-position: -59vh -9vh;
+    }
+
+    #sec3 .inner .drum .sec_text2 p,
+    #sec4 .inner .sowd .sec_text2 p {
+        font-size: 1.2rem;
+    }
+
+    #sec3 .inner .button,
+    #sec4 .inner .button {
+        padding: 10px 20px;
+        font-size: 1.4rem;
+    }
+
+    #sec4 .inner .sowd .sec_text2 {
+        bottom: 55vh;
     }
 }
