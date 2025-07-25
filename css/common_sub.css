@@ -28,6 +28,11 @@ body {
     height: 100px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
     padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
 
 }
 
@@ -50,7 +55,7 @@ body {
     position: absolute;
     margin: 40px auto;
     padding: 0 20px;
-    z-index: 1;
+    z-index: 5;
     width: 100%;
 }
 
@@ -63,21 +68,23 @@ body {
     position: relative;
     display: flex;
     justify-content: flex-start;
-    gap: 60px;
+    gap: 30px;
+    font-weight: 500;
 }
 
 #header .inner nav .gnb>li {
     transition: all 0.5s;
     border-bottom: 1px solid transparent;
     font-size: 1.5rem;
-    /* 볼더 넣을지 말지 고민 */
 }
 
-#header .inner nav .gnb>li:hover {
+#header .inner nav .gnb>li>a {
+    padding: 20px;
+}
+
+.gnb>li>a.active {
     color: var(--point-color);
-    border-bottom: var(--point-color) solid 1px;
 }
-
 
 /* 서브 탭 */
 #header .inner .gnb li>.depth2 {
@@ -88,8 +95,8 @@ body {
     border-radius: 10px;
     text-align: start;
     width: 100px;
-    top: 4vh;
-    margin-left: -10px;
+    top: 3vh;
+    margin-left: 5px;
     opacity: 0;
     transition: all 0.5s ease;
     visibility: hidden;
@@ -133,7 +140,7 @@ body {
 #header .inner nav .ham::after {
     content: "";
     position: absolute;
-    left: 0;
+    left: -15px;
     top: 5px;
     display: block;
     width: 90%;
@@ -145,7 +152,7 @@ body {
 #header .inner nav .ham::before {
     content: "";
     position: absolute;
-    left: 0;
+    left: -15px;
     bottom: 14px;
     display: block;
     width: 90%;
@@ -154,9 +161,13 @@ body {
     transition: all 0.2s;
 }
 
+.gnb li a.active {
+    color: var(--point-color);
+}
+
 #header .inner nav .ham span {
     position: absolute;
-    left: 0;
+    left: -15px;
     bottom: 6px;
     display: block;
     width: 90%;
@@ -181,13 +192,13 @@ body {
 
 
 .mgnb {
-    padding: 100px 20px;
+    padding: 100px 0;
     position: fixed;
-    width: 40%;
+    width: 50%;
     height: 100%;
     background: #fff;
     z-index: 3;
-    left: 0;
+    left: -20px;
     top: 0;
     color: var(--main-color);
     opacity: 0;

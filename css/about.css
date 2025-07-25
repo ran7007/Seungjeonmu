@@ -1,29 +1,5 @@
-#sec1 .sec1_img {
-    position: relative;
-}
-
-#sec1 img {
-    width: 100%;
-    max-height: 600px;
-    height: auto;
-    object-fit: cover;
-    filter: brightness(0.2);
-}
-
-#sec1 p {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: var(--black_background_font-color);
-    text-align: center;
-    font-size: 3rem;
-    font-weight: 500;
-}
-
-/* about */
 #sec2 {
-    padding: 100px 20px;
+    padding: 180px 20px 50px;
 }
 
 #sec2 .inner {

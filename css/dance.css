@@ -15,9 +15,9 @@
 
 #sec1 .tab-container.fixed {
     position: fixed;
-    top: 0;
+    top: 100px;
     width: 100%;
-    z-index: 1000;
+    z-index: 5;
     background: #F3F3F3;
 }
 
@@ -38,7 +38,7 @@
 }
 
 #sec2 {
-    padding-top: 100px;
+    padding-top: 180px;
 }
 
 #sec2 .tab {

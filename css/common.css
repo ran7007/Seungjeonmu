@@ -48,15 +48,16 @@ body {
     position: relative;
     display: flex;
     justify-content: flex-start;
-    gap: 40px;
+    gap: 30px;
     font-weight: 500;
-    cursor: pointer;
 }
 
 #header .inner nav .gnb>li {
     transition: all 0.5s;
+}
 
-
+#header .inner nav .gnb>li>a {
+    padding: 20px;
 }
 
 #header .inner nav .gnb>li:hover {
@@ -72,13 +73,16 @@ body {
     border-radius: 10px;
     text-align: start;
     width: 100px;
-    margin-left: -10px;
+    top: 3vh;
+    margin-left: 5px;
     opacity: 0;
     transition: all 0.5s ease;
+    visibility: hidden;
 }
 
 #header .inner .gnb>li:hover .depth2 {
     opacity: 1;
+    visibility: visible;
 }
 
 #header .depth2 li {
@@ -201,7 +205,7 @@ body {
 #header .inner nav .ham::after {
     content: "";
     position: absolute;
-    left: 0;
+    left: -15px;
     top: 5px;
     display: block;
     width: 90%;
@@ -213,7 +217,7 @@ body {
 #header .inner nav .ham::before {
     content: "";
     position: absolute;
-    left: 0;
+    left: -15px;
     bottom: 14px;
     display: block;
     width: 90%;
@@ -224,7 +228,7 @@ body {
 
 #header .inner nav .ham span {
     position: absolute;
-    left: 0;
+    left: -15px;
     bottom: 6px;
     display: block;
     width: 90%;
@@ -249,13 +253,13 @@ body {
 
 
 .mgnb {
-    padding: 100px 20px;
+    padding: 100px 0;
     position: fixed;
-    width: 40%;
+    width: 50%;
     height: 100vh;
     background: #000;
     z-index: 3;
-    left: -3vh;
+    left: -20px;
     top: 0;
     color: var(--black_background_font-color);
     opacity: 0;
@@ -307,6 +311,7 @@ body {
 }
 
 #footer {
+    margin-top: 100px;
     background: #000;
     color: var(--black_background_font-color);
 }
@@ -326,4 +331,34 @@ body {
         display: block;
         transform: unset;
     }
+}
+
+@media(max-width:769px) {
+
+    #footer .inner {
+        font-size: 1.2rem;
+        flex-wrap: wrap;
+    }
+}
+
+
+@media(max-width:480px) {
+    #header .inner nav {
+        padding: 0 20px 0 0;
+    }
+
+    #header .inner nav .ham {
+        width: 9%;
+    }
+
+    .mgnb {
+        width: 30%;
+    }
+
+    #footer .inner {
+        font-size: 1.2rem;
+        flex-wrap: wrap;
+        padding: 30px;
+    }
+
 }

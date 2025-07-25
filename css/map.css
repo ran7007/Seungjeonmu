@@ -1,11 +1,11 @@
 #sec1 {
     position: relative;
-    padding-top: 50px;
+    padding-top: 150px;
 }
 
 #sec1 .inner {
     position: absolute;
-    top: 50px;
+    top: 150px;
     right: 7%;
     background: #fff;
     padding: 120px 100px;

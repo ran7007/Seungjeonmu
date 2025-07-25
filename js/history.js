@@ -1,47 +1,68 @@
-const scrollSection = document.querySelector('.horizontal-scroll_section');
-const scrollContent = document.querySelector('.horizontal-scroll_content');
-const lastItem = document.querySelector('.item:last-child');
+const scrollSection = document.querySelector('#sec2');
+const scrollContent = document.querySelector('.item_box');
+const items = document.querySelectorAll('.item');
 const nextSection = document.querySelector('#footer');
 
-const lastItemOffset = lastItem.offsetLeft + lastItem.clientWidth;
-const maxScroll = scrollContent.scrollWidth - window.innerWidth;
-scrollSection.style.height = (maxScroll + window.innerHeight) + 'px';
+const initialOffset = 700;
+
+// 마지막 아이템이 완전히 보이도록 계산
+function calculateTotalScrollRange() {
+    // 콘텐츠의 실제 너비
+    const contentWidth = scrollContent.scrollWidth;
+
+    // 뷰포트 너비
+    const viewportWidth = window.innerWidth;
+
+    const maxScrollNeeded = contentWidth - viewportWidth;
+
+    // 초기 오프셋 + 필요한 스크롤 거리 + 여유 공간
+    const extraMargin = 200; // 추가 여유 공간
+
+    return initialOffset + maxScrollNeeded + extraMargin;
+}
+
+const totalScrollRange = calculateTotalScrollRange();
+
+// 섹션 높이를 충분히 크게 설정
+scrollSection.style.height = (totalScrollRange + window.innerHeight) + 'px';
+
+gsap.set(scrollContent, { x: initialOffset });
 
 let lastScrollTop = 0;
 let isTransitioning = false;
 
 document.addEventListener('scroll', () => {
-    // 900px 이하이면 가로 스크롤 관련 동작 무시
     if (window.innerWidth <= 900) return;
-
     if (isTransitioning) return;
 
     const scrolled = window.pageYOffset;
-    const sectionOffset = Math.min(maxScroll, scrolled - scrollSection.offsetTop);
-    const notReachedBottom = Math.max(1000, scrollSection.getBoundingClientRect().bottom - window.innerHeight);
+    const sectionTop = scrollSection.offsetTop;
+    const sectionHeight = scrollSection.offsetHeight;
+    const sectionEnd = sectionTop + sectionHeight - window.innerHeight;
 
-    if (scrollSection.offsetTop <= scrolled && notReachedBottom) {
-        gsap.to(scrollContent, { x: -sectionOffset });
+    if (scrolled >= sectionTop && scrolled <= sectionEnd) {
+        // 진행률 계산 (0~1)
+        const progress = (scrolled - sectionTop) / (sectionEnd - sectionTop);
+        const clampedProgress = Math.max(0, Math.min(3, progress));
 
-        if (sectionOffset >= maxScroll && scrolled > lastScrollTop) {
+        //전체길이 계산
+        const xPosition = initialOffset - (clampedProgress * totalScrollRange - 300);
+
+        gsap.set(scrollContent, { x: xPosition });
+
+        if (clampedProgress >= 0.95 && scrolled > lastScrollTop) {
             isTransitioning = true;
             nextSection.scrollIntoView({ behavior: "smooth" });
 
             setTimeout(() => {
                 isTransitioning = false;
-            }, 500);
+            }, 1000);
         }
     }
 
-    if (scrolled < lastScrollTop && scrolled < scrollSection.offsetTop) {
+    if (scrolled < sectionTop) {
         isTransitioning = false;
     }
 
-    lastScrollTop = scrolled <= 0 ? 0 : scrolled;
-});
-
-const heroScene = new ScrollMagic.Scene({
-    triggerElement: '.horizontal-scroll_section',
-    triggerHook: 0,
-    duration: maxScroll
+    lastScrollTop = scrolled;
 });

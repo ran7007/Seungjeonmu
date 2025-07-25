@@ -21,7 +21,7 @@
 
 #sec2 {
     position: relative;
-    height: 350vh;
+    height: 550vh;
     left: 20%;
     transform: translateX(-50%);
 }
@@ -44,9 +44,9 @@
 }
 
 
-#sec2 .inner .item_box .item:nth-last-child(1) {
-    margin-right: 50vh;
-}
+/* #sec2 .inner .item_box .item:nth-last-child(1) {
+    margin-right: 20vh;
+} */
 
 #sec2 .inner .item_box .item .item_top {
     padding-bottom: 60px;
