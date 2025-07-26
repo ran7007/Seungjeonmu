@@ -161,8 +161,9 @@ body {
     transition: all 0.2s;
 }
 
-.gnb li a.active {
+#header .gnb>li.active>a {
     color: var(--point-color);
+    font-weight: bold;
 }
 
 #header .inner nav .ham span {

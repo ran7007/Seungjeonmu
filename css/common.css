@@ -100,6 +100,11 @@ body {
     border-bottom: var(--point-color) solid 1px;
 }
 
+#header .gnb>li.active>a {
+    color: var(--point-color);
+    font-weight: bold;
+}
+
 /* 우측 */
 #header .inner .rghbar {
     width: 100%;

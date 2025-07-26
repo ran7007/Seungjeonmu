@@ -1,10 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const ham = document.querySelector(".ham");
-    const mgnb = document.querySelector(".mgnb");
+    const currentUrl = location.pathname.split("/").pop();
+    const depthLinks = document.querySelectorAll(".depth2 li a");
 
-    ham.addEventListener("click", () => {
-        ham.classList.toggle("active");
-        mgnb.classList.toggle("active");
+    depthLinks.forEach(link => {
+        const linkHref = link.getAttribute("href").split("/").pop();
+
+        if (linkHref === currentUrl) {
+            const gnbLi = link.closest("li").closest(".depth2").parentElement;
+            if (gnbLi) gnbLi.classList.add("active");
+        }
     });
 });
 
