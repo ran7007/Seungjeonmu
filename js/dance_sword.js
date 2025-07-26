@@ -1,3 +1,4 @@
+
 window.addEventListener('scroll', () => {
     const sec2 = document.querySelector('#sec1');
     const lnb = sec2.querySelector('.tab-container');

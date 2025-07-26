@@ -250,6 +250,16 @@ body {
     color: var(--point-color);
 }
 
+.mgnb dl dt.active {
+    color: var(--point-color);
+    font-weight: bold;
+}
+
+.mgnb dl dd.active,
+.mgnb dl dd a.active {
+    color: var(--point-color);
+    font-weight: bold;
+}
 
 
 #footer {

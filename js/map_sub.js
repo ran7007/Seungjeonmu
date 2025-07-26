@@ -6,8 +6,28 @@ document.addEventListener("DOMContentLoaded", function () {
         ham.classList.toggle("active");
         mgnb.classList.toggle("active");
     });
-});
 
+    const currentUrl = location.pathname.split("/").pop();
+
+    const depthLinks = document.querySelectorAll(".depth2 li a");
+    depthLinks.forEach(link => {
+        const linkHref = link.getAttribute("href").split("/").pop();
+        if (linkHref === currentUrl) {
+            const gnbLi = link.closest(".depth2").parentElement;
+            if (gnbLi) gnbLi.classList.add("active");
+        }
+    });
+
+    const mgnbLinks = document.querySelectorAll(".mgnb dl dd a");
+    mgnbLinks.forEach(link => {
+        const linkHref = link.getAttribute("href").split("/").pop();
+        if (linkHref === currentUrl) {
+            const dt = link.closest("dl").querySelector("dt");
+            if (dt) dt.classList.add("active");
+            link.classList.add("active");
+        }
+    });
+});
 
 
 

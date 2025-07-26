@@ -315,6 +315,12 @@ body {
     color: var(--point-color);
 }
 
+.mgnb dl dt.active,
+.mgnb dl dd a.active {
+    color: var(--point-color);
+    font-weight: bold;
+}
+
 #footer {
     margin-top: 100px;
     background: #000;

@@ -1,16 +1,34 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const currentUrl = location.pathname.split("/").pop();
-    const depthLinks = document.querySelectorAll(".depth2 li a");
+    const ham = document.querySelector(".ham");
+    const mgnb = document.querySelector(".mgnb");
 
+    ham.addEventListener("click", () => {
+        ham.classList.toggle("active");
+        mgnb.classList.toggle("active");
+    });
+
+    const currentUrl = location.pathname.split("/").pop();
+
+    const depthLinks = document.querySelectorAll(".depth2 li a");
     depthLinks.forEach(link => {
         const linkHref = link.getAttribute("href").split("/").pop();
-
         if (linkHref === currentUrl) {
-            const gnbLi = link.closest("li").closest(".depth2").parentElement;
+            const gnbLi = link.closest(".depth2").parentElement;
             if (gnbLi) gnbLi.classList.add("active");
         }
     });
+
+    const mgnbLinks = document.querySelectorAll(".mgnb dl dd a");
+    mgnbLinks.forEach(link => {
+        const linkHref = link.getAttribute("href").split("/").pop();
+        if (linkHref === currentUrl) {
+            const dt = link.closest("dl").querySelector("dt");
+            if (dt) dt.classList.add("active");
+            link.classList.add("active");
+        }
+    });
 });
+
 
 // 스크롤 네비게이션
 $(document).ready(function () {
