@@ -1,31 +1,20 @@
-window.addEventListener('scroll', () => {
-    const sec2 = document.querySelector('#sec1');
-    const lnb = sec2.querySelector('.tab-container');
+document.addEventListener('DOMContentLoaded', () => {
+    const targets = document.querySelectorAll('.showImg');
 
-    if (window.scrollY >= sec2.offsetTop) {
-        lnb.style.width = `${lnb.offsetWidth}px`;
-        lnb.classList.add('fixed');
-    } else {
-        lnb.classList.remove('fixed');
-        lnb.style.width = '';
+    function onScroll() {
+        const windowHeight = window.innerHeight;
+
+        targets.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < windowHeight * 0.85) {
+                el.classList.add('in-view');
+            } else {
+                el.classList.remove('in-view');
+            }
+        });
     }
-});
 
-function openTab(tabName) {
-    document.querySelectorAll('.tab, .tabs').forEach(function (el) {
-        el.classList.remove('on');
-    });
-    document.getElementById(tabName).classList.add('on');
-    document.querySelector('.tabs[onclick="openTab(\'' + tabName + '\')"]').classList.add('on');
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    var swiper = new Swiper(".mySwiper", {
-        spaceBetween: 30,
-        centeredSlides: true,
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-        }
-    });
+    window.addEventListener('scroll', onScroll);
+    window.addEventListener('resize', onScroll);
+    onScroll();
 });

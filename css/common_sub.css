@@ -274,6 +274,38 @@ body {
 
 }
 
+/* breadcrumb */
+.breadcrumb {
+    font-size: 14px;
+    color: #999;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Pretendard', sans-serif;
+}
+
+.breadcrumb a {
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.breadcrumb a:hover {
+    color: #02469E;
+    /* 포인트 컬러 */
+}
+
+.breadcrumb .divider {
+    color: #ccc;
+}
+
+.breadcrumb .current {
+    color: #000;
+    font-weight: 500;
+}
+
+
 @media(max-width:1024px) {
     #header .inner nav .gnb {
         display: none;
