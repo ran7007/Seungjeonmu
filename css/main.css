@@ -2,13 +2,12 @@
 
 body {
     background-color: #000;
-    overflow-x: hidden;
 }
 
-#sec1 {
 
+#sec1 {
     position: relative;
-    height: 200vh
+    height: 200vh;
 }
 
 #sec1 .sec1_video,
@@ -55,7 +54,7 @@ body {
     position: absolute;
     z-index: 1;
     border: solid 1px #ffffff;
-    top: 80vh;
+    top: 83vh;
     color: var(--black_background_font-color);
     padding: 10px 30px;
     border-radius: 20px;
@@ -268,10 +267,6 @@ body {
         top: 62vh
     }
 
-    #sec1 .inner .button {
-        top: 82vh;
-    }
-
     #header .inner .rghbar .scrl_txt {
         transform: translateY(40vh)
     }
@@ -304,22 +299,18 @@ body {
 
 @media (max-width:650px) {
     #sec1 .sec1_img {
-        max-width: 600px;
-        min-height: 950px;
+        max-width: 100%;
+        min-height: 100%;
     }
 
     #sec1 img {
         width: 100%;
         height: auto;
-        object-position: -35vh center;
+        object-fit: cover;
     }
 
     #sec1 .inner ul {
         top: 65vh
-    }
-
-    #sec1 .inner .button {
-        top: 80vh;
     }
 
     #header .inner .rghbar .scrl_txt {
@@ -354,7 +345,7 @@ body {
 
     .sec3_img_wrap,
     .sec4_img_wrap {
-        width: 600px;
+        width: 100%;
         min-height: 800px;
         overflow: hidden;
         position: relative
@@ -390,9 +381,6 @@ body {
 }
 
 @media (max-width:480px) {
-    #sec1 .inner .button {
-        top: 86vh
-    }
 
     #sec1 .inner ul li:nth-child(1) {
         font-size: 1.8rem;

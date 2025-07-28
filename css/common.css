@@ -210,7 +210,6 @@ body {
 #header .inner nav .ham::after {
     content: "";
     position: absolute;
-    left: -15px;
     top: 5px;
     display: block;
     width: 90%;
@@ -222,7 +221,6 @@ body {
 #header .inner nav .ham::before {
     content: "";
     position: absolute;
-    left: -15px;
     bottom: 14px;
     display: block;
     width: 90%;
@@ -233,7 +231,6 @@ body {
 
 #header .inner nav .ham span {
     position: absolute;
-    left: -15px;
     bottom: 6px;
     display: block;
     width: 90%;
@@ -341,6 +338,10 @@ body {
     #header .inner nav .ham {
         display: block;
         transform: unset;
+    }
+
+    #header .inner nav {
+        padding: 0 20px 0 0;
     }
 }
 

@@ -263,7 +263,7 @@
         position: relative;
         max-width: 760px;
         top: 0;
-        left: -5vh;
+        overflow: hidden;
     }
 
     #sec3 .inner .tab .tab_con .tab_img_wrap img {
