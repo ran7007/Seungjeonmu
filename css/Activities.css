@@ -1,4 +1,16 @@
-#sec .sec1_img {
+#sec0 {
+    padding: 150px 0 20px;
+    max-width: 1920px;
+}
+
+#sec0 .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#sec1 .sec1_img {
     position: relative;
     max-width: 1920px;
 }
@@ -106,11 +118,17 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    gap: 200px;
+    gap: 250px;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
 }
+
+#sec3 .inner .tab .tab_con div {
+    width: calc(50% / 2);
+}
+
+
 
 #sec3 .inner .tab .tab_con .year dl dt {
     color: var(--point-color);
@@ -136,12 +154,12 @@
     position: sticky;
     top: 100px;
     flex-shrink: 0;
-    max-width: 500px;
-    height: auto;
+    max-width: 510px;
+    min-height: 600px;
 }
 
 #sec3 .inner .tab .tab_con .tab_img_wrap img {
-    width: 100%;
+    aspect-ratio: 6 / 8;
     display: block;
     object-fit: cover;
     padding-top: 100px;
@@ -157,6 +175,10 @@
 
     #sec3 .inner .tab .tab_con {
         gap: 150px;
+    }
+
+    #sec3 .inner .tab .tab_con div {
+        width: calc(100% / 2);
     }
 }
 
@@ -227,14 +249,31 @@
     }
 
     #sec3 .inner .tab .tab_con {
-        gap: 70px;
+        display: block;
+    }
+
+    #sec3 .inner .tab .tab_con div {
+        width: 100%;
     }
 
     #sec3 .inner .tab .tab_con .tab_img_wrap {
-        max-width: 350px;
+        position: relative;
+        max-width: 760px;
         top: 0;
+        left: -5vh;
     }
 
+    #sec3 .inner .tab .tab_con .tab_img_wrap img {
+        padding-top: 0;
+    }
+
+    #sec3 .inner .tab .tab_con .year dl:nth-of-type(1) dt {
+        padding-top: 30px;
+    }
+
+    #sec3 .inner .tab .tab_con .year dl dt::before {
+        bottom: 4.5vh;
+    }
 }
 
 @media (max-width: 769px) {
@@ -255,26 +294,6 @@
         font-size: 3rem;
     }
 
-    #sec3 .inner .tab .tab_con {
-        display: block;
-    }
-
-    #sec3 .inner .tab .tab_con .tab_img_wrap {
-        position: relative;
-        max-width: 760px;
-    }
-
-    #sec3 .inner .tab .tab_con .tab_img_wrap img {
-        padding-top: 0;
-    }
-
-    #sec3 .inner .tab .tab_con .year dl:nth-of-type(1) dt {
-        padding-top: 30px;
-    }
-
-    #sec3 .inner .tab .tab_con .year dl dt::before {
-        bottom: 4.5vh;
-    }
 }
 
 @media (max-width: 600px) {

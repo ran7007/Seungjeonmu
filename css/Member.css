@@ -1,12 +1,23 @@
+#sec0 {
+    padding: 150px 0 20px;
+    max-width: 1920px;
+}
+
+#sec0 .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 #sec1 {
-    padding-top: 100px;
     height: 100%;
 }
 
-#sec1 .inner h1,
+#sec0 .inner h1,
 #sec2 .inner h1 {
     color: var(--point-color);
 }
+
 
 #sec1 .inner img {
     padding-top: 50px;
@@ -217,6 +228,10 @@
 @media (max-width: 600px) {
     #sec1 {
         height: 900px;
+    }
+
+    #sec2 {
+        padding-top: 100px;
     }
 
     #sec2 .mem_con .con_text dl dt {

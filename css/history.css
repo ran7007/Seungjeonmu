@@ -1,16 +1,15 @@
 #sec1 {
-    padding: 150px 0 0;
+    padding-top: 150px;
+    max-width: 1920px;
 }
 
-#sec1 h1 {
-    font-size: 3.5rem;
+#sec1 .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#sec1 p {
-    font-size: 2rem;
-}
-
-#sec1::before {
+#sec1 .inner h1 #sec1::before {
     content: "";
     position: absolute;
     border-top: 1px solid #02469E;
@@ -21,103 +20,140 @@
 
 #sec2 {
     position: relative;
-    height: 550vh;
-    left: 20%;
-    transform: translateX(-50%);
+    padding-top: 50px;
 }
 
-
-
-#sec2 .inner {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-
-}
-
-#sec2 .inner .item_box {
+#sec2 .sec2_box {
     display: flex;
-    gap: 200px;
-    height: 100vh;
-    padding: 100px 0;
-    width: max-content;
+    justify-content: space-between;
+    align-items: center;
 }
 
-
-/* #sec2 .inner .item_box .item:nth-last-child(1) {
-    margin-right: 20vh;
-} */
-
-#sec2 .inner .item_box .item .item_top {
-    padding-bottom: 60px;
+#sec2 .sec2_box .sec2_text {
+    width: calc((100% - 100px) / 2);
 }
 
-#sec2 .inner .item_box .item .item_bottom {
-    max-width: 550px;
+.swiper {
+    margin-left: 0 !important;
+    max-width: 750px;
+    height: 700px;
 }
 
-#sec2 .inner .item_box .item .item_bottom img {
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
     width: 100%;
-    height: 560px;
+    height: 100%;
     object-fit: cover;
 }
 
-#sec3 {
-    display: none;
-}
-
-#sec3 .sec3_item {
+#sec2 .sex2_text_box .sec2_year dl {
     padding-bottom: 50px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    gap: 40px;
+    position: relative;
 }
 
-#sec3 .sec3_item .item_top {
-    text-align: center;
+#sec2 .sex2_text_box .sec2_year dl::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    left: -4vh;
+    border-left: 1px solid #02469E;
 }
 
-#sec3 .sec3_item .item_bottom {
-    padding-top: 10px;
-    max-width: 600px;
-    max-height: 500px;
+#sec2 .sex2_text_box .sec2_year dl dt {
+    position: relative;
+    width: 100px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--point-color);
 }
 
-#sec3 .sec3_item .item_bottom img {
-    width: 100%;
-    height: auto;
+#sec2 .sex2_text_box .sec2_year dt::before {
+    content: "";
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    background: #02469E;
+    border-radius: 50px;
+    left: -4.6vh;
+    top: 1vh;
 }
 
-@media (max-width:769px) {
-    #sec1 {
-        padding: 50px 0 70px;
-        text-align: center;
+#sec2 .sex2_text_box .sec2_year dl:nth-last-child(1) {
+    padding-bottom: 0;
+}
+
+
+@media (max-width:1680px) {
+    #sec2 .sec2_box .sec2_text {
+        width: calc((100% - 300px) / 2);
     }
 
-    #sec1::before {
-        bottom: 2vh;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90%;
+    .swiper {
+        max-width: 650px;
+        height: 600px;
+    }
+}
+
+@media (max-width:1180px) {
+    .swiper {
+        margin-left: 0 !important;
+        max-width: 550px;
+        height: 400px;
+    }
+}
+
+@media (max-width:900px) {
+    #sec2 .sec2_box {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
     }
 
-    #sec2 {
+    .swiper {
+        margin-left: auto !important;
+    }
+
+    #sec2 .sec2_box .sec2_text {
+        width: 100%;
+        padding-left: 5vh;
+    }
+
+    #sec2 .sex2_text_box .sec2_year dt {
+        width: 100%;
+    }
+
+    #sec2 .sex2_text_box .sec2_year dl {
+        align-items: flex-start;
+        padding-left: 30px;
+
+    }
+
+
+    #sec2 .sex2_text_box .sec2_year dl::before,
+    #sec2 .sex2_text_box .sec2_year dt::before {
         display: none;
     }
-
-    #sec3 {
-        display: block;
-    }
-
 }
 
-@media (max-width:500px) {
-    #sec1 h1 {
-        font-size: 2.5rem;
+@media (max-width:600px) {
+    #sec2 .sec2_box .sec2_text {
+        padding-left: 0;
     }
 
-    #sec1 p {
-        font-size: 1.5rem;
+    #sec2 .sex2_text_box .sec2_year dl {
+        padding-left: 0
     }
 
+    #sec2 .sex2_text_box .sec2_year dl dd {
+        width: 80%;
+    }
 }

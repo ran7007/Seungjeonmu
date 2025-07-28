@@ -302,7 +302,7 @@ body {
 
 }
 
-@media (max-width:500px) {
+@media (max-width:650px) {
     #sec1 .sec1_img {
         max-width: 600px;
         min-height: 950px;

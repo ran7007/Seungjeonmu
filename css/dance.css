@@ -9,9 +9,8 @@
     align-items: center;
 }
 
-#sec1 .inner h1 {
+#sec1 .inner h1 span {
     color: var(--point-color);
-    font-size: 4rem;
 }
 
 #sec1 .sec1_img {
@@ -30,8 +29,10 @@
 }
 
 
-#sec2 h2 {
+#sec2 h2,
+#sec3 h2 {
     padding-bottom: 20px;
+    color: var(--point-color);
 }
 
 #sec2 .inner::after {
@@ -53,7 +54,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 100px;
+    gap: 200px;
 }
 
 #sec3 .sec3_img {
@@ -70,7 +71,6 @@
     clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
     -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
     opacity: 1;
-    /* 투명도는 고정 */
     animation-fill-mode: forwards;
 }
 
@@ -87,5 +87,34 @@
     100% {
         clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
         -webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+    }
+}
+
+@media (max-width:1550px) {
+    #sec3 .inner {
+        gap: 100px;
+    }
+}
+
+@media (max-width:769px) {
+    #sec2 {
+        padding: 50px;
+    }
+
+    #sec3 {
+        padding: 50px 0 0;
+    }
+
+    #sec3 .inner {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    #sec3 .sec3_img {
+        max-width: 550px
+    }
+
+    #sec3 .sec3_img img {
+        height: 600px;
     }
 }

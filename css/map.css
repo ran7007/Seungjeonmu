@@ -1,11 +1,23 @@
+#sec0 {
+    padding: 150px 0 0;
+    max-width: 1920px;
+}
+
+#sec0 .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
 #sec1 {
     position: relative;
-    padding-top: 150px;
+    padding-top: 20px;
 }
 
 #sec1 .inner {
     position: absolute;
-    top: 150px;
+    top: 20px;
     right: 7%;
     background: #fff;
     padding: 120px 100px;
@@ -155,6 +167,14 @@
 
     }
 
+    #sec1 .inner::after {
+        top: 16vh;
+    }
+
+    #sec1 .inner::before {
+        top: 38vh;
+    }
+
     #footer .inner {
         font-size: 1.2rem;
         flex-wrap: wrap;
@@ -162,6 +182,18 @@
 }
 
 @media(max-width:500px) {
+    #sec0 {
+        padding: 150px 0 10px;
+    }
+
+    #sec1 {
+        padding-top: 0px;
+    }
+
+    #sec1 .inner::after {
+        top: 15vh;
+    }
+
     #sec2 .inner p {
         top: -152vh;
         font-size: 1.3rem;
@@ -170,11 +202,6 @@
 
 
 @media(max-width:480px) {
-
-
-    #sec1 {
-        padding-top: 20px;
-    }
 
     #sec1 .inner .map_box {
         top: -10vh;
