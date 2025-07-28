@@ -1,5 +1,10 @@
 @charset "uft-8";
 
+#wrap {
+    overflow-x: hidden;
+
+}
+
 body {
     background-color: #000;
     overflow-x: hidden;
@@ -378,6 +383,10 @@ body {
         right: auto;
         bottom: -8vh;
         ;
+    }
+
+    #sec4 .inner .sowd .sec_text2 {
+        bottom: 47vh;
     }
 }
 
