@@ -45,6 +45,7 @@
     padding-top: 30px;
     display: flex;
     gap: 30px;
+    cursor: pointer;
 }
 
 #sec1 .sec1_text .sec1_list p {
@@ -262,14 +263,20 @@
     #sec3 .inner .tab .tab_con .tab_img_wrap {
         position: relative;
         max-width: 760px;
-        height: auto;
+        max-height: 600px;
         top: 0;
         overflow: hidden;
-        aspect-ratio: 1/1
     }
 
     #sec3 .inner .tab .tab_con .tab_img_wrap img {
         padding-top: 0;
+        aspect-ratio: 1/1;
+
+    }
+
+    #sec3 .inner .tab .tab_con .year {
+        position: relative;
+        bottom: 9vh;
     }
 
     #sec3 .inner .tab .tab_con .year dl:nth-of-type(1) dt {
@@ -317,4 +324,12 @@
         display: none;
     }
 
+}
+
+@media (max-width: 400px) {
+
+    #sec1 .sec1_text h1,
+    #sec1 .sec1_text p {
+        font-size: 2rem;
+    }
 }
