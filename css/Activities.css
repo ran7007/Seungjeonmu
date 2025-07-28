@@ -73,6 +73,7 @@
     padding: 30px 0;
     font-size: 18px;
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+    position: relative;
 }
 
 #sec2 .tab-container.fixed {
@@ -246,6 +247,8 @@
 
     #sec3 {
         padding-top: 0;
+        position: relative;
+        z-index: -1;
     }
 
     #sec3 .inner .tab .tab_con {

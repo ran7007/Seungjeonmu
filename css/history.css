@@ -156,4 +156,12 @@
     #sec2 .sex2_text_box .sec2_year dl dd {
         width: 80%;
     }
+
+}
+
+@media (max-width:500px) {
+    #sec2 .sex2_text_box .sec2_year dl {
+        gap: 10px;
+    }
+
 }
