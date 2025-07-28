@@ -64,6 +64,8 @@
 #sec2 {
     height: 100px;
     width: 100%;
+    position: relative;
+    z-index: 2;
 }
 
 #sec2 .tab-container {
@@ -201,7 +203,6 @@
         align-items: stretch;
         position: relative;
         gap: 0;
-        z-index: 999;
         padding: 0;
         top: -1vh;
     }
@@ -248,7 +249,6 @@
     #sec3 {
         padding-top: 0;
         position: relative;
-        z-index: -1;
     }
 
     #sec3 .inner .tab .tab_con {
@@ -262,8 +262,10 @@
     #sec3 .inner .tab .tab_con .tab_img_wrap {
         position: relative;
         max-width: 760px;
+        height: auto;
         top: 0;
         overflow: hidden;
+        aspect-ratio: 1/1
     }
 
     #sec3 .inner .tab .tab_con .tab_img_wrap img {
@@ -280,6 +282,9 @@
 }
 
 @media (max-width: 769px) {
+    #sec0 {
+        padding: 120px 0 20px;
+    }
 
     #sec .sec1_img {
         max-height: 600px;

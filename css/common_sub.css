@@ -315,11 +315,19 @@ body {
     }
 
     #header .inner nav {
-        padding: 0 20px 0 0;
+        padding: 0;
     }
 }
 
 @media(max-width:769px) {
+
+    #header {
+        height: auto;
+    }
+
+    #header .inner {
+        padding: 0 !important;
+    }
 
     #footer .inner {
         font-size: 1.2rem;
@@ -329,9 +337,6 @@ body {
 
 
 @media(max-width:480px) {
-    #header .inner nav {
-        padding: 0 20px 0 0;
-    }
 
     #header .inner nav .ham {
         width: 9%;

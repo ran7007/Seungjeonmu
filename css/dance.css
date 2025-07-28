@@ -39,7 +39,7 @@
     content: "";
     position: absolute;
     max-width: 1720px;
-    width: 100%;
+    width: calc(100% - 5vh);
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
@@ -54,7 +54,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 200px;
+    gap: 210px;
 }
 
 #sec3 .sec3_img {
@@ -97,8 +97,20 @@
 }
 
 @media (max-width:769px) {
+    #sec1 {
+        padding-top: 120px
+    }
+
+    #sec1 .sec1_img {
+        padding-top: 20px;
+    }
+
     #sec2 {
-        padding: 50px;
+        padding: 50px 20px;
+    }
+
+    #sec2 .inner {
+        padding: 0 !important;
     }
 
     #sec3 {

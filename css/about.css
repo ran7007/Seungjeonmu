@@ -142,8 +142,20 @@
 }
 
 @media (max-width:769px) {
+    #sec1 {
+        padding-top: 120px;
+    }
+
+    #sec2 .inner img {
+        height: auto;
+    }
+
     #sec2 {
-        padding: 50px 0;
+        padding: 20px 0;
+    }
+
+    #sec2 .inner {
+        gap: 30px;
     }
 
     #sec2 .inner .intro_right h1 {

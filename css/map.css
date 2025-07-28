@@ -152,7 +152,9 @@
 
 
 @media(max-width:769px) {
-
+    #sec0 {
+        padding: 120px 0 20px;
+    }
 
     #sec1 .inner {
         position: relative;
@@ -191,15 +193,9 @@
 }
 
 @media(max-width:500px) {
-    #sec0 {
-        padding: 150px 0 10px;
-    }
-
     #sec1 {
         padding-top: 0px;
     }
-
-
 
     #sec2 .inner p {
         top: -152vh;

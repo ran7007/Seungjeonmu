@@ -112,6 +112,15 @@
 }
 
 @media (max-width:900px) {
+
+    #sec1 {
+        padding-top: 120px
+    }
+
+    #sec2 {
+        padding-top: 20px;
+    }
+
     #sec2 .sec2_box {
         flex-direction: column;
         align-items: center;

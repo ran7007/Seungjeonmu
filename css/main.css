@@ -38,13 +38,15 @@ body {
     display: none;
 }
 
-
+#sec1 .inner {
+    position: relative;
+    z-index: 1;
+    top: 60vh;
+}
 
 #sec1 .inner ul {
     color: #ffffff;
-    position: absolute;
-    top: 60vh;
-    z-index: 1;
+    margin-bottom: 30px;
 }
 
 #sec1 .inner ul li:nth-child(1) {
@@ -54,13 +56,12 @@ body {
 #sec1 .inner ul li:nth-child(2) {
     font-size: 2rem;
     font-weight: 200;
+    bottom: 10vh;
 }
 
 #sec1 .inner .button {
-    position: absolute;
-    z-index: 1;
+    margin-top: 10%;
     border: solid 1px #ffffff;
-    top: 83vh;
     color: var(--black_background_font-color);
     padding: 10px 30px;
     border-radius: 20px;
@@ -185,7 +186,7 @@ body {
     display: flex;
     align-items: end;
     z-index: 1;
-    bottom: 30vh;
+    bottom: 45vh;
     max-width: 1720px;
     width: 100%;
 }
@@ -269,15 +270,10 @@ body {
         top: 10vh
     }
 
-    #sec1 .inner ul {
-        top: 62vh
-    }
-
     #header .inner .rghbar .scrl_txt {
         transform: translateY(40vh)
     }
 }
-
 
 @media(max-width:1024px) {
     #sec1 .sec1_video {
@@ -298,9 +294,6 @@ body {
         height: 100%;
         /* object-position: 20% center; */
     }
-
-
-
 }
 
 @media (max-width:650px) {
@@ -313,10 +306,6 @@ body {
         width: 100%;
         height: auto;
         object-fit: cover;
-    }
-
-    #sec1 .inner ul {
-        top: 65vh
     }
 
     #header .inner .rghbar .scrl_txt {
@@ -340,6 +329,10 @@ body {
         font-size: 2.4rem;
     }
 
+    #sec2 .sec2_text br {
+        display: none;
+    }
+
     #sec2 .sec2_text dl dd:nth-of-type(2) {
         font-size: 1.6rem;
     }
@@ -352,7 +345,6 @@ body {
     .sec3_img_wrap,
     .sec4_img_wrap {
         width: 100%;
-        min-height: 800px;
         overflow: hidden;
         position: relative
     }
