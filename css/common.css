@@ -261,7 +261,7 @@ body {
     height: 100vh;
     background: #000;
     z-index: 3;
-    left: -20px;
+    left: 0;
     top: 0;
     color: var(--black_background_font-color);
     opacity: 0;
