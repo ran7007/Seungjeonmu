@@ -2,12 +2,13 @@
 
 body {
     background-color: #000;
+    overflow-x: hidden;
 }
-
 
 #sec1 {
     position: relative;
     height: 200vh;
+    overflow: hidden;
 }
 
 #sec1 .sec1_video,
