@@ -20,6 +20,13 @@ $(function () {
     scrollAnimations();
 });
 
+ScrollTrigger.create({
+    trigger: "#sec2",
+    start: "top center",
+    onEnter: () => document.querySelector('.gotop').classList.add('active'),
+    onLeaveBack: () => document.querySelector('.gotop').classList.remove('active')
+});
+
 function scrollAnimations() {
     gsap.registerPlugin(ScrollTrigger);
 

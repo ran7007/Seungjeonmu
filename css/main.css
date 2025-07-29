@@ -246,6 +246,28 @@ body {
 }
 
 
+.gotop {
+    position: fixed;
+    right: 4%;
+    bottom: 30px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    padding: 15px;
+    z-index: 999999;
+    box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.30);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease;
+}
+
+.gotop.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
 @media (max-width:1750px) {
     #header .inner .rghbar {
         padding-right: 30px;
@@ -280,6 +302,10 @@ body {
         width: 100%;
         height: 100%;
         /* object-position: 20% center; */
+    }
+
+    .gotop {
+        display: none;
     }
 }
 
