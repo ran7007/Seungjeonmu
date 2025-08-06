@@ -9,7 +9,6 @@
     align-items: center;
 }
 
-
 #sec1 .sec1_img {
     position: relative;
     max-width: 1920px;
@@ -66,6 +65,7 @@
     height: 100px;
     width: 100%;
     position: relative;
+    /* bottom: 0; */
     z-index: 2;
 }
 
